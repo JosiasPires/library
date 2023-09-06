@@ -1,6 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    display: grid;
+    height: 100vh;
+    padding: 2rem;
+    background-color: rgb(26, 26, 26);
+    grid-template-columns: repeat(auto-fill, 15rem);
+    gap: 1rem;
+    font-family: 'Roboto', sans-serif;
+    justify-content: center;
+}
+
+.add {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 80%;
+    background-color: rgb(18, 126, 36);
+    display: grid;
+    place-items: center;
+    position: fixed;
+    bottom: 80px;
+    right: 100px;
+}
+
+.add svg {
+    width: 60%;
+    fill: rgb(12, 12, 12);
+}
+
+.card {
+    background-color: white;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 2px solid rgb(12, 12, 12);
+    height: 19rem;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.card p {
+    padding: 1rem;
+}
+
+.card .title {
+    padding: 1rem;
+    background-color: rgb(10, 70, 20);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+
+}
