@@ -76,3 +76,25 @@ body {
 .card button:hover {
     filter: brightness(0.8);
 }
+
+dialog {
+    padding: 1rem;
+    border: 2px solid rgb(10, 70, 20);
+    border-radius: 8px;
+    min-width: 220px;
+    width: 40%;
+    position: absolute;
+    margin: auto;
+
+}
+
+dialog form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input[type="text"], input[type="number"], fieldset, form button {
+    padding: 0.5rem;
+}
+

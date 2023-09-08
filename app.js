@@ -8,7 +8,7 @@ function Book(title, author, pages, read) {
     this.pages = pages;
     this.read = read;
     if (myLibrary.length === 0) this.index = 0;
-    else this.index = myLibrary[-1].index + 1;
+    else this.index = myLibrary[myLibrary.length - 1].index + 1;
     this.info = function() {
         let isRead = read ? 'read' : 'not read yet';
         return `${this.title} by ${this.author}, ${this.pages} pages, ${isRead}.`;
@@ -103,18 +103,22 @@ addBtn.addEventListener('click', () => {
 });
 
 confirmBtn.addEventListener('click', (event) => {
-    event.preventDefault();
+    console.log(formAuthor.value == true);
     let read = document.querySelector('input[name="read"]:checked').value == 'true' ? true : false;
-    let book = new Book(
-        formTitle.value,
-        formAuthor.value,
-        formPages.value,
-        read
-        );
-    addBookToLibrary(book);
-    removeBooks();
-    displayLibrary();
-    dialog.close();
+    if (formTitle.value && formAuthor.value && formPages.value) {
+        event.preventDefault();
+        console.log('a')
+        let book = new Book(
+            formTitle.value,
+            formAuthor.value,
+            formPages.value,
+            read
+            );
+        addBookToLibrary(book);
+        removeBooks();
+        displayLibrary();
+        dialog.close();
+    }
 })
 
 displayLibrary();
