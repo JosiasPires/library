@@ -1,28 +1,6 @@
 const body = document.body;
 
-const myLibrary = [
-    {
-        index: 0,
-        title: '0',
-        author: 'A.J. William',
-        pages: 318,
-        read: true,
-    },
-    {
-        index: 1,
-        title: '1',
-        author: 'A.J. William',
-        pages: 318,
-        read: true,
-    },
-    {
-        index: 2,
-        title: '2',
-        author: 'A.J. William',
-        pages: 318,
-        read: true,
-    }
-];
+const myLibrary = [];
 
 function Book(title, author, pages, read) {
     this.title = title;
