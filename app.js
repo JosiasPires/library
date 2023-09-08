@@ -22,7 +22,7 @@ function addBookToLibrary(book) {
 function updateIndexes() {
     const cards = Array.from(document.querySelectorAll('.card'));
     for (let i = 0; i < myLibrary.length; i++) {
-        myLibrary[i].index = 0;
+        myLibrary[i].index = i;
     }
     for (let i = 0; i < myLibrary.length; i++) {
         if (cards[i]) cards[i].setAttribute('data-index', i);
@@ -109,11 +109,9 @@ cancelBtn.addEventListener('click', (event) => {
 })
 
 confirmBtn.addEventListener('click', (event) => {
-    console.log(formAuthor.value == true);
     let read = document.querySelector('input[name="read"]:checked').value == 'true' ? true : false;
     if (formTitle.value && formAuthor.value && formPages.value) {
         event.preventDefault();
-        console.log('a')
         let book = new Book(
             formTitle.value,
             formAuthor.value,
