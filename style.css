@@ -27,6 +27,11 @@ body {
     position: fixed;
     bottom: 80px;
     right: 100px;
+    cursor: pointer;
+}
+
+.add:hover svg {
+    fill: white;
 }
 
 .add svg {
@@ -53,5 +58,4 @@ body {
     background-color: rgb(10, 70, 20);
     color: white;
     font-family: 'Montserrat', sans-serif;
-
 }

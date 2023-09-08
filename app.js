@@ -36,7 +36,15 @@ function addBookToLibrary(book) {
     myLibrary.push(book);
 }
 
+function removeBooks() {
+    let cards = document.querySelectorAll('.card');
+    for (let c of cards) {
+        c.remove();
+    }
+}
+
 function displayLibrary() {
+    removeBooks();
     for (let book of myLibrary) {
         let card = document.createElement("div");
         let title = document.createElement("h3");
@@ -56,5 +64,30 @@ function displayLibrary() {
         body.appendChild(card);
     }
 }
+
+const addBtn = document.querySelector('.add');
+const dialog = document.querySelector('dialog');
+const formTitle = document.querySelector('#title');
+const formAuthor = document.querySelector('#author');
+const formPages = document.querySelector('#pages');
+const confirmBtn = document.querySelector('#confirmBtn');
+
+addBtn.addEventListener('click', () => {
+    dialog.showModal();
+});
+
+confirmBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    let read = document.querySelector('input[name="read"]:checked').value == 'true' ? true : false;
+    let book = new Book(
+        formTitle.value,
+        formAuthor.value,
+        formPages.value,
+        read
+        );
+    addBookToLibrary(book);
+    displayLibrary();
+    dialog.close();
+})
 
 displayLibrary();
