@@ -97,10 +97,16 @@ const formTitle = document.querySelector('#title');
 const formAuthor = document.querySelector('#author');
 const formPages = document.querySelector('#pages');
 const confirmBtn = document.querySelector('#confirmBtn');
+const cancelBtn = document.querySelector('#cancelBtn');
 
 addBtn.addEventListener('click', () => {
     dialog.showModal();
 });
+
+cancelBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    dialog.close();
+})
 
 confirmBtn.addEventListener('click', (event) => {
     console.log(formAuthor.value == true);
