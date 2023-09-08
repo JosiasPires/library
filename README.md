@@ -1,2 +1,2 @@
-# library
-Library project from The Odin Project
+## Library Project
+This project from TOP allowed me to apply my learnings about Objects
