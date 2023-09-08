@@ -55,11 +55,14 @@ function removeBooks(index) {
     const cards = document.querySelectorAll('.card');
     let dataIndex = typeof index == 'number' ? index : true;
     for (let c of cards) {
-        // if (c) console.log(c.getAttribute('data-index'));
         if (c && typeof dataIndex === 'boolean') c.remove();
         else if (c && c.getAttribute('data-index') == dataIndex) c.remove();
     }
     updateIndexes();
+}
+
+function changeRead() {
+
 }
 
 function displayLibrary() {
@@ -82,6 +85,16 @@ function displayLibrary() {
         });
         let readBtn = document.createElement("button");
         readBtn.classList.add('changeRead');
+        readBtn.addEventListener('click', () => {
+            if (book.read) {
+                book.read = false;
+                read.textContent = "Status: Not read yet"
+            }
+            else {
+                book.read = true;
+                read.textContent = "Status: Read"
+            }
+        })
         title.textContent = book.title;
         author.textContent = `By ${book.author}`;
         pages.textContent = `Pages: ${book.pages}`;
@@ -125,7 +138,5 @@ confirmBtn.addEventListener('click', (event) => {
     displayLibrary();
     dialog.close();
 })
-
-
 
 displayLibrary();
